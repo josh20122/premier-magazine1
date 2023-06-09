@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/subscribe', function () {
+Route::get('/pricing', function () {
     return inertia('Pricing');
 });
 
@@ -46,6 +46,10 @@ Route::get('/coming-soon', function () {
 
 Route::get('/magazine/{id}', function () {
     return inertia('Magazine');
+});
+
+Route::get('/contact', function () {
+    return inertia('Contact');
 });
 
 require __DIR__ . '/auth.php';
