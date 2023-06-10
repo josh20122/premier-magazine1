@@ -16,8 +16,12 @@ class PlanFactory extends Factory
      */
     public function definition()
     {
+        $description  = [
+            'Daily updates, Newsletters, Events, Subscriptions ',
+            'Daily updates, Newsletters, Events, Subscriptions ',
+        ];
         return [
-            //
+            // 'name'=>$this->faker->firstName,
         ];
     }
 }

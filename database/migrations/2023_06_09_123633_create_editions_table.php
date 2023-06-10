@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('keywords');
-            $table->decimal('string');
+            $table->decimal('description');
             $table->string('cover');
+            $table->foreignId('category_id');
             $table->string('pages');
-            // $table->string('')
             $table->timestamps();
         });
     }
@@ -28,7 +28,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      *
-     * @return void
+     * @return void<
      */
     public function down()
     {

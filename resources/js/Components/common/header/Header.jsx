@@ -8,7 +8,9 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const pages = [
-        { title: "Pricing", url: "/pricing" },
+        { title: "Home", url: "/" },
+
+        { title: "Pricing", url: "/plans/pricing" },
         { title: "Contact us", url: "/contact" },
     ];
 
@@ -19,11 +21,11 @@ const Header = () => {
                 <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                     <div class="relative flex items-center justify-between">
                         <div class="flex items-center">
-                            <a
+                            <Link
                                 href="/"
                                 aria-label="Company"
                                 title="Company"
-                                class="inline-flex items-center mr-8"
+                                class="inline-flex items-center mr-8 "
                             >
                                 <svg
                                     class="w-8 text-teal-accent-400"
@@ -32,18 +34,21 @@ const Header = () => {
                                     strokeWidth="2"
                                     strokeLinecap="round"
                                     strokeMiterlimit="10"
-                                    stroke="currentColor"
                                     fill="none"
+                                    stroke="currentColor"
                                 >
                                     <rect x="3" y="1" width="7" height="12" />
                                     <rect x="3" y="17" width="7" height="6" />
                                     <rect x="14" y="1" width="7" height="6" />
                                     <rect x="14" y="11" width="7" height="12" />
                                 </svg>
-                                <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
+                                <span
+                                    href="/"
+                                    class="ml-2 text-xl font-bold tracking-wide text-yellow-500 uppercase"
+                                >
                                     Company
                                 </span>
-                            </a>
+                            </Link>
                             <ul class="md:flex items-center hidden space-x-8 lg:flex">
                                 {pages.map((page, index) => (
                                     <li>
@@ -153,8 +158,8 @@ const Header = () => {
                                                             height="12"
                                                         />
                                                     </svg>
-                                                    <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                                        Company
+                                                    <span class="ml-2 text-xl font-bold tracking-wide text-yellow-600 uppercase">
+                                                        Premier
                                                     </span>
                                                 </a>
                                             </div>
@@ -181,46 +186,19 @@ const Header = () => {
                                         </div>
                                         <nav>
                                             <ul class="space-y-4">
-                                                <li>
-                                                    <a
-                                                        href="/"
-                                                        aria-label="Our product"
-                                                        title="Our product"
-                                                        class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                    >
-                                                        Product
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        href="/"
-                                                        aria-label="Our product"
-                                                        title="Our product"
-                                                        class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                    >
-                                                        Features
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        href="/"
-                                                        aria-label="Product pricing"
-                                                        title="Product pricing"
-                                                        class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                    >
-                                                        Pricing
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        href="/"
-                                                        aria-label="About us"
-                                                        title="About us"
-                                                        class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                    >
-                                                        About us
-                                                    </a>
-                                                </li>
+                                                {pages.map((page, index) => (
+                                                    <li key={index}>
+                                                        <Link
+                                                            href={page.url}
+                                                            aria-label="Our product"
+                                                            title="Our product"
+                                                            class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                        >
+                                                            {page.title}
+                                                        </Link>
+                                                    </li>
+                                                ))}
+
                                                 <li>
                                                     <a
                                                         href="/"
@@ -234,7 +212,7 @@ const Header = () => {
                                                 <li>
                                                     <a
                                                         href="/"
-                                                        class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                                        class="inline-flex items-center justify-center w-full h-12 bg-blue-700 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                                         aria-label="Sign up"
                                                         title="Sign up"
                                                     >

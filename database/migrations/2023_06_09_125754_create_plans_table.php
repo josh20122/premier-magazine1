@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->decimal('price');
+            $table->string('display_text');
+            $table->decimal('period');
+            $table->string('display_period');
+            $table->string('description');
             $table->timestamps();
         });
     }
